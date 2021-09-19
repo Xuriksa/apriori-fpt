@@ -12,13 +12,15 @@ def parse_file(file):
     transactions = {}
     
     line1 = file.readline()
-    min_sup = float(line1.strip('\n').split()[0])
-    min_conf = float(line1.strip('\n').split()[1])
-    min_lift = float((line1.strip('\n').split()[2]))
+    mins = line1.strip('\n').split(', ')
+    min_sup = float(mins[0])
+    min_conf = float(mins[1])
+    min_lift = float(mins[2])
 
-    for line in file:                        
-        tid = line.strip('\n').split()[0]
-        item = line.strip('\n').split()[1]
+    for line in file:
+        tuple = line.strip('\n').split(', ')
+        tid = tuple[0]
+        item = tuple[1]
             
         if tid in transactions:
             transactions[tid].add(item)

@@ -4,19 +4,19 @@ A command line python program to mine frequent patterns and their association ru
 
 Input:
 =
-The input is a file containing a normalized transaction database:
+The input is a file containing a normalized transaction database with comma separators:
 
 | Minimum Support | Minimum Confidence | MinimumLift |
 |:-:|:-:|:-:|
-| 5000 | 0.8 | 1.0 |
+| 5000, | 0.8, | 1.0, |
 
-| Customer (No Spaces) | Item (No Spaces) |
+| Customer | Item |
 |:-:|:-:|
-| Emily | Soap    |
-| Emily | Beans   |
-| John | Beans    |
-| John | IceCream |
-| ... | ... |
+| Emily, | Soap    |
+| Emily, | Beans   |
+| John, | Beans    |
+| John, | IceCream |
+| ..., | ... |
 
 There is a samples folder with sample input databases. 
 
@@ -28,11 +28,11 @@ python main.py [-h] [-ap] [-fpt] [-pin] [-pr] [infile] [outfile]
 
 **Positional arguments**:
 
-  infile      The input file containing the normalized database. Space separators are used. The first line should have
+  infile      The input file containing the normalized database. Comma separators are used. The first line should have
               the minimum support (positive integer), minimum confidence (floating point between 0 and 1), and minimum
               lift (unbounded positive floating point). The remaining lines are the records of a normalized
               transaction database (i.e. each line has customer and an item). There is only one item in each record so
-              multiple lines may be needed to handle one customer. Spaces in customers or items are not allowed.
+              multiple lines may be needed to handle one customer.
 
   outfile     File to print the output. Defaults to console.
 
