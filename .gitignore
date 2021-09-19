@@ -1,6 +1,6 @@
 __pycache__/
 outputs/
-Dockerfile
+.dockerignore
 *.bat
 static_main.py
 *.pyproj
