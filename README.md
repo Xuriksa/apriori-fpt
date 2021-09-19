@@ -2,9 +2,6 @@ Description:
 =
 A command line python program to mine frequent patterns and their association rules from a database.
 
-Dockerfile: 
-[`Github`](https://github.com/Xuriksa/apriori-fpt/blob/master/Dockerfile)
-
 Input:
 =
 The input is a file containing a normalized transaction database:
@@ -21,19 +18,7 @@ The input is a file containing a normalized transaction database:
 | John | IceCream |
 | ... | ... |
 
-Install:
-=
-There is a samples folder with sample input databases. To use your own, mount a folder
-with your databases when running the container.
-For example:
-
-```console
-$ docker run -v "${pwd}:/home/user/files" --name fpattens --rm -it leisarsoft/apriori-fpt
-```
-
-This example mounts the files on your current folder to a volume. The volume can be used to put the output files.
-
-The entry point of the container is bash in the folder with the main file.
+There is a samples folder with sample input databases. 
 
 Usage:
 =

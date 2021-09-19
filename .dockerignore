@@ -1,6 +1,7 @@
 __pycache__/
 outputs/
 Dockerfile
+README.md
 .gitignore
 *.bat
 static_main.py
