@@ -1,0 +1,10 @@
+__pycache__/
+outputs/
+Dockerfile
+*.bat
+static_main.py
+*.pyproj
+*.sln
+*.txt
+docker_commands.txt
+.vs

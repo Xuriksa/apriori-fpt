@@ -1,0 +1,17 @@
+1	0.9	1.0
+Emily	Chicken
+Emily	Toothpaste
+Jacob	Apple
+Jacob	Bread
+Jacob	Toothpaste
+Michelle	Chicken
+Michelle	Toothpaste
+Oscar	Bread
+Oscar	Chips
+Rosalyn	Apple
+Rosalyn	Chicken
+Rosalyn	Lettuce
+Rosalyn	Toothpaste
+Stanley	Bread
+Stanley	Chicken
+Stanley	Toothpaste
