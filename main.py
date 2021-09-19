@@ -6,7 +6,7 @@ from Apriori import Apriori
 from FPTreeMiner import fpt_itemsets
 
 input_help='''
-    The input file containing the normalized database. Space separators are used. The first line should have
+    The input file containing the normalized database. Comma separators are used. The first line should have
     the minimum support (positive integer), minimum confidence (floating point between 0 and 1), and minimum
     lift (unbounded positive floating point). The remaining lines are the records of a normalized
     transaction database (i.e. each line has customer and an item). There is only one item in each record so
