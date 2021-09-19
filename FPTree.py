@@ -6,7 +6,7 @@ class FPTree:
 
         # initialize linked list
         for item in items:
-            self.linked_lists.append(Node(ItemSet(item.itemset, 0), None, None, []))
+            self.linked_lists.append(Node(item.duplicate(), None, None, []))
 
         self.root = Node(ItemSet({"Root"}, 0), None, None, []) # make the root        
 
@@ -48,10 +48,7 @@ class FPTree:
         '''
         while index < len(transaction) and current in children:
             child = parent.find_child(current) # get matching child
-            child.items.support += current.items.support # increase its support by the upcoming support   
-            
-            head = self.linked_lists[self.linked_lists.index(child)]
-            head.items.support += current.items.support # head has linked list size 
+            child.items.support += current.items.support # increase its support by the upcoming support
 
             index += 1 # continue on the transaction
             if index >= len(transaction): # end if the transaction is over
@@ -74,8 +71,6 @@ class FPTree:
         '''
         
         head = self.linked_lists[self.linked_lists.index(node)] # head of the node
-        #head.items.increase_support() # head has linked list size
-        head.items.support += node.items.support
         
         # make the node the new first child of the list (order does not matter)
         old_first = head.right
@@ -117,6 +112,10 @@ class FPTree:
             self.get_path_rec(parent, path)
                 
     def bfs(self):
+        '''
+        Returns a dictionary of tree_level: level_items. 
+        '''
+
         levels = []
         self.bfs_rec(self.root, 1, levels) # get denormalized levels
         normalized_levels = {}
@@ -137,6 +136,7 @@ class FPTree:
         normalized, meaning there are multiple tuples
         for the same level
         '''
+
         children = current.children
         levels.append((level, children))
         

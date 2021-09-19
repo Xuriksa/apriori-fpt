@@ -19,7 +19,7 @@ def fpt_itemsets(min_sup, transactions):
     fpt = create_fpt(min_sup, next_transactions) # create initial tree
     
     # recursively mine the tree to find all frequent patterns
-    MineTree(min_sup, fpt, ItemSet(set(), float("inf")), denormalized_results)
+    fpt_itemsets_rec(min_sup, fpt, ItemSet(set(), float("inf")), denormalized_results)
  
     results = get_normalized_results(denormalized_results) # normalize results    
 
@@ -45,7 +45,7 @@ def create_fpt(min_sup, transactions):
 
     return tree
 
-def MineTree(min_sup, fptree, prefix, results):
+def fpt_itemsets_rec(min_sup, fptree, prefix, results):
     '''
     Recursively mine the tree to find frequent itemsets.
     prefix is the frequent itemset mined on the previous iteration
@@ -69,7 +69,7 @@ def MineTree(min_sup, fptree, prefix, results):
             Condfpt = create_fpt(min_sup, next_transactions)
 
             if Condfpt.linked_lists: # conditional tree not empty
-                MineTree(min_sup, Condfpt, new_set, results) # recursive call            
+                fpt_itemsets_rec(min_sup, Condfpt, new_set, results) # recursive call            
 
 def get_next_transactions(head, fpt):
     '''
@@ -145,7 +145,7 @@ def get_single_item_name(items):
 
 def get_normalized_results(denormalized_results):
     '''
-    Normalizes the results stored in the recursive mining call.
+    Normalizes the list of frequent itemsets into a list of levels of frequent itemsets.
     Denormailized results is a list of itemsets [ItemSet, ItemSet...]
     Normalized results is a list of level sets of itemsets [{1-ItemSet, 1-ItemSet...}, {2-ItemSet, 2-ItemSet...}, {3-ItemSet, 3-ItemSet...}...]
     '''

@@ -1,12 +1,12 @@
+.vs
 __pycache__/
 outputs/
-Dockerfile
-README.md
 .gitignore
+Dockerfile
 *.bat
+*.md
 static_main.py
 *.pyproj
 *.sln
 *.txt
 docker_commands.txt
-.vs

@@ -1,10 +1,9 @@
+.vs
 __pycache__/
 outputs/
-.dockerignore
-DOCKER_README.md
 *.bat
+DOCKER_README.md
 static_main.py
 *.pyproj
 *.sln
 docker_commands.txt
-.vs

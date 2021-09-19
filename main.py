@@ -56,7 +56,7 @@ if args.infile is not None:
         file_write(out, "Frequent Pattern Tree:\n")
 
         start = time.time()
-        fpt_results = Apriori(min_sup, transactions)
+        fpt_results = fpt_itemsets(min_sup, transactions)
         end = time.time()
         fpt_time = end - start
 
@@ -64,4 +64,6 @@ if args.infile is not None:
         file_write(out, "Time: " + str(fpt_time))
         file_write(out, "==================================================")
 
+    args.infile.close()
+    out.close()
     sys.exit(0)
