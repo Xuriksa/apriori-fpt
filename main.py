@@ -10,7 +10,7 @@ input_help='''
     the minimum support (positive integer), minimum confidence (floating point between 0 and 1), and minimum
     lift (unbounded positive floating point). The remaining lines are the records of a normalized
     transaction database (i.e. each line has customer and an item). There is only one item in each record so
-    multiple lines may be needed to handle one customer. Spaces in customers or items are not allowed.
+    multiple lines may be needed to handle one customer.
 '''
 
 parser = argparse.ArgumentParser(description='Frequent Pattern Mining with Apriori and/or Frequent Pattern Tree.')

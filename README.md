@@ -8,7 +8,7 @@ The input is a file containing a normalized transaction database with comma sepa
 
 | Minimum Support | Minimum Confidence | MinimumLift |
 |:-:|:-:|:-:|
-| 5000, | 0.8, | 1.0, |
+| 5000, | 0.8, | 1.0 |
 
 | Customer | Item |
 |:-:|:-:|
