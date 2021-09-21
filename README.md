@@ -23,7 +23,7 @@ There is a samples folder with sample input databases.
 Usage:
 =
 ```console
-python main.py [-h] [-ap] [-fpt] [-pin] [-pr] [infile] [outfile]
+python main.py [-h] [-ap] [-fpt] [-pin] [-pr] infile [outfile]
 ```
 
 **Positional arguments**:
@@ -32,7 +32,7 @@ python main.py [-h] [-ap] [-fpt] [-pin] [-pr] [infile] [outfile]
               the minimum support (positive integer), minimum confidence (floating point between 0 and 1), and minimum
               lift (unbounded positive floating point). The remaining lines are the records of a normalized
               transaction database (i.e. each line has customer and an item). There is only one item in each record so
-              multiple lines may be needed to handle one customer.
+              multiple lines may be needed to handle one customer. Required.
 
   outfile     File to print the output. Defaults to console.
 
